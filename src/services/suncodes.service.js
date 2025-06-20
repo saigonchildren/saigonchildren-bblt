@@ -152,4 +152,3 @@ export const bulkUpdateStatus = async (ids, isActive) => {
 
   return { success: true, data, error: null };
 };
-return { success: true, data, error: null };

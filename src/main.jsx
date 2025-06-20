@@ -1,4 +1,5 @@
 import '@mantine/notifications/styles.css';
+
 import '@mantine/core/styles.css';
 import { createRoot } from 'react-dom/client'
 import './index.css'
@@ -12,6 +13,7 @@ import LandingPage from './pages/common/LandingPage.jsx'
 import LandingPageLayout from './layouts/LandingPageLayout.jsx'
 import { MantineProvider } from '@mantine/core'
 import { Notifications } from '@mantine/notifications';
+import ManageSunCode from './pages/admin/ManageSunCode.jsx'
 import DashboardPage from './pages/admin/DashboardPage.jsx'
 import ManageUsersPage from './pages/admin/ManageUsersPage.jsx'
 import ManageMatchesPage from './pages/admin/ManageMatchesPage.jsx'
@@ -35,6 +37,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="users" element={<ManageUsersPage />} />
           <Route path="matches" element={<ManageMatchesPage />} />
           <Route path="matches/:matchId" element={<MatchDetailPage />} />
+          <Route path="suncodes" element={<ManageSunCode />} />
         </Route>
 
         <Route path="/user/*" element={<AppLayout configRoles={["Mentee", "Mentor"]} />}>

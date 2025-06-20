@@ -23,7 +23,7 @@ export default function LoginPage() {
         if (isAuthenticated()) {
             notifications.show({
                 title: "Already Logged In",
-                message: `Welcome back ${user.email}`,
+                message: `Welcome back!`,
                 color: "green",
             })
             if (user.role === "Admin") {

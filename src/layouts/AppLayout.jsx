@@ -1,7 +1,7 @@
 import { useAuthStore } from '../store/auth.store.js';
 import { useDisclosure, useFavicon } from '@mantine/hooks';
 import classes from '../styles/AdminLayout.module.css';
-import { HiChartBar, HiLogout, HiUser } from 'react-icons/hi';
+import { HiChartBar, HiCode, HiLogout, HiOutlineTag, HiTag, HiUser } from 'react-icons/hi';
 import { AppShell, Burger, Button, Group, ScrollArea, Skeleton } from '@mantine/core';
 import SCC_LOGO from '../assets/scc_logo.png';
 import { useEffect, useState } from 'react';
@@ -20,7 +20,8 @@ export default function AppLayout({ configRoles }) {
             icon: HiChartBar
         },
         { label: 'Manage users', link: '/admin/users', icon: HiUser },
-        { label: 'Manage matches', link: '/admin/matches', icon: FaNetworkWired }
+        { label: 'Manage matches', link: '/admin/matches', icon: FaNetworkWired },
+        { label: 'Manage sun codes', link: '/admin/suncodes', icon: HiTag },
     ]
 
     const userLinks = [
@@ -54,7 +55,7 @@ export default function AppLayout({ configRoles }) {
             padding="md"
         >
             <AppShell.Header>
-                <Group h="100%" px="md">
+                <Group onClick={() => { navigate('/') }} className='cursor-pointer' h="100%" px="md">
                     <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
                     <img src={SCC_LOGO} alt="SCC Logo" className='h-8 w-auto' />
                 </Group>
